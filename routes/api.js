@@ -18,7 +18,7 @@ let mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 let dns = require('dns');
 
-// mongoose.connect(process.env.DB);
+mongoose.connect(process.env.DB, { useNewUrlParser: true }); // useNewUrlParser is for future mongoose updates
 
 let IssueSchema = new Schema({
   issue_title: { type: String, required: true },
